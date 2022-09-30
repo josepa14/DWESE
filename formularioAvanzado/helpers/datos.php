@@ -6,11 +6,12 @@
 function llamadaFichero(){
     $fichero = "../modelo/usuarios.txt";
     $leerFichero= file_get_contents($fichero);
-    $ficheroPorLineas= explode("\n",$leerFichero);
-    return $ficheroPorLineas;
+   
+    return $leerFichero;
 }
 
 function leerFichero(){
+$ficheroPorLineas= explode("\n",llamadaFichero());
 foreach(llamadaFichero() as $v)
 {
      $asoc[] = explode (";",$v);   
@@ -32,4 +33,11 @@ function autenticarUser($nombre,$pass){
     }
     }
 }
+function agregarUsuario($nombre,$pass,$admin){
+$agregar = file_get_contents(llamadaFichero());
+$agregar .= "\n$nombre;$pass;$admin";
+file_put_contents(llamadaFichero(), $agregar);
+}
+
+
 ?>

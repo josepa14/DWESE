@@ -23,8 +23,7 @@ include '../helpers/datos.php';
 	<tbody>
     <tr>
         <?php
-   
-    $fichero= llamadaFichero();
+    $fichero= explode("\n",llamadaFichero());
     $i = 0;
     foreach($fichero as $v)
     {
@@ -36,6 +35,24 @@ include '../helpers/datos.php';
          $i++;
     }  
 	   echo"</tbody></table>";
+    
+       ?>
+<h3>Agregar usuarios</h3>
+<form action="../controlador/addUser.php" method="post">
+ <ul>
+ 
+    <label for="name">Nombre:</label>
+    <input type="text" name="nombre">
+    <label for="pass">pass:</label>
+    <input type="text" name="pass">
+    <label for="admin">Usuaio Admin?:</label>
+    <input type="checkbox"  name="admin" value="true"></input>
+    <button type="submit">Mandar </button>
+ </ul>
+</form>
+       <?php
+
+
         ?>
 </body>
 </html>
