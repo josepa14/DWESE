@@ -1,0 +1,8 @@
+benito;agua;coca
+pepa;cereza;dolores
+holi;cereza;dolores
+holi; cereza; dolores
+pepe; cereza; naranja
+pepe; cereza; naranja
+pepe; cereza; naranja
+pepe; cereza; naranja

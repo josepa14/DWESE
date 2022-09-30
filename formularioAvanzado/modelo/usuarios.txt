@@ -1,0 +1,2 @@
+pepe;pepito;false
+admin;alojomora;true
