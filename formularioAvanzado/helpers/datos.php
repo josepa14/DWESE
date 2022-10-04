@@ -11,8 +11,9 @@ function llamadaFichero(){
 }
 
 function leerFichero(){
-$ficheroPorLineas= explode("\n",llamadaFichero());
-foreach(llamadaFichero() as $v)
+$fichero = llamadaFichero();
+$ficheroPorLineas= explode("\n",$fichero);
+foreach($ficheroPorLineas as $v)
 {
      $asoc[] = explode (";",$v);   
 }
@@ -34,9 +35,9 @@ function autenticarUser($nombre,$pass){
     }
 }
 function agregarUsuario($nombre,$pass,$admin){
-$agregar = file_get_contents(llamadaFichero());
-$agregar .= "\n$nombre;$pass;$admin";
-file_put_contents(llamadaFichero(), $agregar);
+    $agregar = file_get_contents(llamadaFichero());
+    $agregar .= "\n$nombre;$pass;$admin";
+    file_put_contents(llamadaFichero(), $agregar);
 }
 
 

@@ -11,9 +11,15 @@
         <ul>
            <label for="nombre">Nombre:</label>
            <input type="text" name="nombre"></input>
+           <?php
+           if (isset($_POST['nombre'] && empty($_POST['nombre'])) ){
+            echo "<h1>El campo nombre no puede estar vacio</h1>";
+           }
+           ?>
            <label for="pass">Pass:</label>
            <input type="pass"  name="pass"></input>
-
+<?php
+?>
            <button type="submit">Login </button>
         </ul>
        </form>   

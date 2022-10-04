@@ -6,6 +6,8 @@ include '../helpers/datos.php';
 
 $nombre = $_POST['nombre'];
 $pass = $_POST['pass'];
+
+
 $esAdmin=autenticarUser($nombre,$pass);
 
 print($esAdmin);
