@@ -36,8 +36,6 @@ if (validacion($edad)){
                if (isset($_POST['color']) && empty($_POST['color']))
                     echo "<span style='color:red'> Debe introducir un color!!</span>"
           ?><br />
-
-
     <input type="submit" value="Enviar" name="enviar"/>
 
 
