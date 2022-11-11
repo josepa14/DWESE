@@ -22,10 +22,6 @@ if (isset($_GET['menu'])) {
         require_once './Vistas/Mantenimiento/listadovacunas.php';
      
     }
-    if ($_GET['menu'] == "login") {
-        require_once './Vistas/Mantenimiento/login.php';
-     
-    }
 
     
 
