@@ -26,8 +26,10 @@
                 "<a href='?menu=cerrarsesion'>Cerrar sesión</a>":""; ?>
 
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                <?= Sesion::existe('login')?"":"<a class='nav-link' href='?menu=login'>Login <span class='sr-only'>(current)</span></a>
+                <a class='nav-link' href='?menu=registro'>Registro <span class='sr-only'>(current)</span></a>"; ?>
+                    <!--<input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>-->
                 </form>
             </div>
         </nav>
