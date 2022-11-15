@@ -1,4 +1,5 @@
 <?php
+
     $valida=new Validacion();
     if(isset($_POST['submit']))
     {
