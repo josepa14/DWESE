@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/chat.js"></script>
+</head>
+<body>
+    <form method="post" action="php/index.php">
+        <label for="origen">yo:</label>
+        <input type="text" name="origen" id="origen"/>
+        <label for="destino">para:</label>
+        <input type="text" name="destino" id="destino"/>
+        <label for="mensaje">mensaje:</label>
+        <textarea type="text" name="mensaje" id="mensaje"></textarea>
+        <input type="submit" id="boton" value="enviar"/>
+        <input type="submit" id="conectar" value="conectar"/>
+    </form>
+    <div id="contenedor" data="0">
+
+    </div>
+</body>
+</html>

@@ -11,8 +11,8 @@
             if(Login::Identifica($_POST['usuario'],$_POST['contrasena'],
             isset($_POST['recuerdame'])?$_POST['recuerdame']:false))
             {
-                $url=$_GET['returnurl'];
-                header("location:?menu=".$url);
+                $url=$_GET[''];
+                header("location:?menu=");
             }
         }
     }
