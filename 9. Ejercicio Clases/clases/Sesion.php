@@ -5,16 +5,24 @@ class Sesion{
     }
 
     public static function leerSesion(string $clave){
+        if  (Self::existeSesion($clave)){
+            return $_SESSION[$clave];
+        }
+
         
     }
     public static function existeSesion(string $clave){
-          //isset de la sesion return true o false
+         if (isset($_SESSION[$clave])){
+            return true;
+         }
+         return false;
     }
     public static function escribirSesion($clave,$valor){
-      //para guardar el nombre de la session del usuario
+        
+        $_SESSION["$clave"]=$valor;
     }
     public static function eliminarSesion($clave){
-        //hacer unset "$sesion unset"
+        unset($_SESSION["$clave"]);
     }
 }
 ?>

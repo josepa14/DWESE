@@ -4,12 +4,13 @@ class Login
     public static function Identifica(string $usuario,string $contrasena,bool $recuerdame)
     {
         //existe el usuario? damelo, pero esta logeado? vale, continua con la sesion activa pues
-        ExisteUsuario($usuario,$contrasena);
+       $user = Self::ExisteUsuario($usuario,$contrasena);
+       if($user != null){
+        Sesion::escribirSesion($user->getlogin(), $user);  //valor todo el objeto y la clave es el nombre del usuario
+        setcookie('user',$user->getLogin());
+       }
 
-        $ru = new RepoUsuario();
-        $usuario = $ru->getUser($usuario,$contrasena);
-        Sesion::iniciar();
-        return $usuario;
+    
     }
 
     private static function ExisteUsuario(string $usuario,string $contrasena=null)
@@ -17,10 +18,10 @@ class Login
         $ru = new RepoUsuario();
         $user = $ru->getUser($usuario,$contrasena);
        if($user->getLogin() == $usuario){
-        return true;
+        return $user;
        }
        else
-       return false;          
+       return null;          
     }
 
     public static function UsuarioEstaLogueado()
