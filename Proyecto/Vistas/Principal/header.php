@@ -11,6 +11,14 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="?menu=mantenimiento">MANTENIMIENTO <span class="sr-only">(current)</span></a>
                     </li>
+                    <?php
+                    if(Sesion::existe("user") && Sesion::leer("user")->getRol() == "admin"){
+                     echo '<li class="nav-item active">
+                        <a class="nav-link" href="?menu=administracion">Administracion <span class="sr-only">(current)</span></a>
+                    </li>'; 
+                    }
+                    
+                    ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,12 +30,18 @@
                         </div>
                     </li>
                 </ul>
-                <?= Sesion::existe($_COOKIE['user'])?"Hola bienvenido ".Sesion::leer($_COOKIE['user']).
-                "<a href='?menu=cerrarsesion'>Cerrar sesión</a>":""; ?>
+                <?php
+                $respuesta =  Sesion::existe("user")?"Hola bienvenido  ".Sesion::leer('user')->getLogin()
+                . " <a href='?menu=cerrarsesion'>Cerrar sesión</a>":"";
+                echo $respuesta;
+                ?>
 
                 <form class="form-inline my-2 my-lg-0">
-                <?= Sesion::existe($_COOKIE['user'])?"":"<a class='nav-link' href='?menu=login'>Login <span class='sr-only'>(current)</span></a>
-                <a class='nav-link' href='?menu=registro'>Registro <span class='sr-only'>(current)</span></a>"; ?>
+                <?php
+                $respuesta2 = Sesion::existe('user')?"":"<a class='nav-link' href='?menu=login'>Login <span class='sr-only'>(current)</span></a>
+                <a class='nav-link' href='?menu=registro'>Registro <span class='sr-only'>(current)</span></a>"; 
+                echo $respuesta2;
+                ?>
                     <!--<input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>-->
                 </form>

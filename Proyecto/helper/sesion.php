@@ -8,22 +8,27 @@ class Sesion
 
     public static function leer(string $clave)
     {
-    //voy a mirar a ver si esta la sesion activa
+        if  (Self::existe($clave)){
+            return $_SESSION[$clave];
+        }
     }
 
     public static function existe(string $clave)
     {
-    //voy a kirar si la sesion existe y no esta vacia
+        if (isset($_SESSION["$clave"])){
+            return true;
+         }
+         return false;
     }
 
     public static function escribir($clave,$valor)
     {
-      //  $_SESSION['$login'] igual valor
+        $_SESSION["$clave"]=$valor;
     }
 
     public static function eliminar($clave)
     {
-        //voy a destruir la sesion X
-        session_destroy($clave);
+        
+        session_destroy();
     }
 }

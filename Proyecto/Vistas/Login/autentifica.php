@@ -8,11 +8,13 @@
         //Comprobamos validacion
         if($valida->ValidacionPasada())
         {
+            header("location:?menu=inicio");
+            //este if no me funciona y no se porque
             if(Login::Identifica($_POST['usuario'],$_POST['contrasena'],
-            isset($_POST['recuerdame'])?$_POST['recuerdame']:false))
+            isset($_POST['recuerdame']) || $_POST['recuerdame'] = false))
             {
                 $url=$_GET[''];
-                header("location:?menu=");
+                header("location:?menu=inicio");
             }
         }
     }
@@ -38,6 +40,6 @@
                     <input type='checkbox' name='recuerdame'> Recuerdame</label>
             </div>
         </form>
-        <p class='text-center'><a href='#'>Crear una Cuenta</a></p>
+        <p class='text-center'><a href='?menu=registro'>Crear una Cuenta</a></p>
     </div>
 </div>

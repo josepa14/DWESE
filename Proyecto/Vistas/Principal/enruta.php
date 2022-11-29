@@ -20,7 +20,15 @@ if (isset($_GET['menu'])) {
     }
     if ($_GET['menu'] == "listadovacunas") {
         require_once './Vistas/Mantenimiento/listadovacunas.php';
-     
+    
+    }
+    if ($_GET['menu'] == "administracion") {
+        require_once './Vistas/Administracion/administracion.php';
+    
+    }
+    if ($_GET['menu'] == "registro") {
+        require_once './Vistas/Registro/registro.php';
+    
     }
 
     

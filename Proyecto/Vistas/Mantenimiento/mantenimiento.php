@@ -1,2 +1,4 @@
 <?php
-echo ("<p> Mantenimiento</p>");
+if (!Login::UsuarioEstaLogueado()){
+    header("location:?menu=login");
+}

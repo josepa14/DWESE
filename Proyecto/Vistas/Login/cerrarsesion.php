@@ -1,6 +1,5 @@
 <?php
-Sesion::iniciar();
-setcookie('recuerdame',Sesion::leer('login'),time()-10);
-Sesion::eliminar('login');
+setcookie('recuerdame',Sesion::leer('user')->getLogin(),time()-10);
+Sesion::eliminar('user');
 header("location:?menu=inicio");
 ?>
