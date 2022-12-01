@@ -10,8 +10,8 @@ if (isset($_GET['menu'])) {
         require_once './Vistas/Login/cerrarsesion.php';
      
     }
-    if ($_GET['menu'] == "mantenimiento") {
-        require_once './Vistas/mantenimiento/mantenimiento.php';
+    if ($_GET['menu'] == "concursos") {
+        require_once './Vistas/concursos/listadoConcursos.php';
      
     }
     if ($_GET['menu'] == "listadoanimales") {
@@ -27,7 +27,7 @@ if (isset($_GET['menu'])) {
     
     }
     if ($_GET['menu'] == "registro") {
-        require_once './Vistas/Registro/registro.php';
+        require_once './Vistas/Registro/registra.php';
     
     }
 
