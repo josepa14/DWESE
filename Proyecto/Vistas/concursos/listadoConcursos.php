@@ -4,19 +4,7 @@
 
 $concurso = new RepoConcurso();
 $cantidad = $concurso->getAll();
-echo "<pre>";
-var_dump($cantidad);    
-echo "</pre>";
-echo "<table border=1px>";
 
-    
-for($i=0;$i<count($cantidad);$i++){
-    echo "<tr><td> ".$cantidad[$i]->getIdConcurso().
-        "</td><td> ".$cantidad[$i]->getName().
-        "</td><td> "."</td></tr>";
-}
-
-echo "</table>";
 echo "<table border=1px>";
 
 
