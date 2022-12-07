@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
     var guardar = this.document.getElementById("guardar");
 
     guardar.onclick= async () =>{
-
+        // var datos = new FormData();
         // datos.append(" nombre", nombre.value);
         // datos.append("login: ",login.value);
         // datos.append(" password", password.value);
