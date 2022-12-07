@@ -12,7 +12,7 @@
         var_dump($usuario);
         if($valida->ValidacionPasada())
         {
-          Registro::registrar($usuario);
+          ControllerUsuario::registrar($usuario);
             header("location:?menu=inicio");
             //este if no me funciona y no se porque
            

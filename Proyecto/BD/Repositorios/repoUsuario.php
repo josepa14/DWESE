@@ -56,4 +56,12 @@ class RepoUsuario
         }
         else return false;
        }
+       public function borrarUser($id){
+        $sql = "DELETE FROM `usuario` WHERE `idParticipante` = $id";
+        if($result = $this->con->exec($sql)){
+            return true;
+        }
+        else return false;
+       }
 }
+

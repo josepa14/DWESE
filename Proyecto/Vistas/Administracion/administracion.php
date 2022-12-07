@@ -4,10 +4,9 @@ if(!Login::UsuarioEstaLogueado() || Sesion::leer("user")->getRol() == "user"){
 }
 echo "<h1>Manejo de usuarios</h1>";
 
-$usuarios = new RepoUsuario();
-$cantidad = $usuarios->getAll();
+$cantidad = ControllerUsuario::leerTodos();
 
-echo ' <script src="javascript/mantenimiento2.js"></script>
+echo '<script src="javascript/mantenimiento2.js"></script>
         <table id="editable">
         <thead>
             <tr>
@@ -65,20 +64,31 @@ echo ' <script src="javascript/mantenimiento2.js"></script>
         echo '</tbody>
         <tfoot>
             <tr id="insertar">
-            <td><input type="text" id="id" name="id" disabled/></td>
+                <td><input type="text" id="id" name="id" disabled/></td>
                 <td><input type="text" id="nombre" name="nombre"/></td>
                 <td><input type="text" id="login" name="login"/></td>
                 <td><input type="text" id="password" name="password"/></td>
                 <td><input type="text" id="correo"/></td>
                 <td><input type="text" id="localizacion"/></td>
-                <td><input type="text" id="Imagen"/></td>
-                <td><input type="text" id="Rol"/></td>
+                <td><input type="text" id="imagen"/></td>
+                <td>   
+                    <select name="rol" id="rol">
+                    <option value="admin">Admin</option>
+                    <option value="user" selected="selected">Usuario</option> 
+                    </select>
+                </td>
+                <td><input type="button" id="guardar" value="Guardar Nuevo"/></td>
             </tr>
             <tr id="editar" style="display:none">
-                <td><input  type="text" name="nombre" id="eDnombre"/></td>
-                <td><input  type="text" name="apellido1" id="eDapellido1"/></td>
-                <td><input  type="text" name="apellido2" id="eDapellido2"/></td>
-                <td><input  type="button" name="Editar" value="Editar" id="eDGuardar"/></td>
+                <td><input type="text" id="id" name="id" disabled/></td>
+                <td><input type="text" id="nombre" name="nombre"/></td>
+                <td><input type="text" id="login" name="login"/></td>
+                <td><input type="text" id="password" name="password"/></td>
+                <td><input type="text" id="correo"/></td>
+                <td><input type="text" id="localizacion"/></td>
+                <td><input type="text" id="imagen"/></td>
+                <td><input type="text" id="rol"/></td>
+                <td><input type="button" name="Editar" value="Editar" id="eDGuardar"/></td>
             </tr>
         </tfoot>
         
