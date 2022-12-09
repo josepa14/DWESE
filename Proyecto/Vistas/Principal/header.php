@@ -12,7 +12,7 @@
                         <a class="nav-link" href="?menu=concursos">Concursos <span class="sr-only">(current)</span></a>
                     </li>
                     <?php
-                    if(Sesion::existe("user") && Sesion::leer("user")->getRol() == "admin"){
+                    if(Sesion::existe("user")&& Sesion::leer("user")->getRol() == "admin"){
                      echo '<li class="nav-item active">
                         <a class="nav-link" href="?menu=administracion">Administracion <span class="sr-only">(current)</span></a>
                     </li>'; 

@@ -23,8 +23,8 @@
 
 <body>
     <?php
-        require_once './Vistas/Principal/header.php';
-      //  require_once './Vistas/Principal/header2.php';
+        //require_once './Vistas/Principal/header.php';
+       require_once './Vistas/Principal/header2.php';
     ?>
     <section>
         <div id="cuerpo">
