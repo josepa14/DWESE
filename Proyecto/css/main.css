@@ -1,3 +1,23 @@
+.c-menu {
+  background-color: yellow;
+  display: flex;
+  align-items: stretch;
+  padding: 20px;
+  width: 100%;
+}
+
+.c-menu__izquierda {
+  background-color: red;
+  flex: 1;
+  text-align: center;
+}
+
+.c-menu__derecha {
+  background-color: brown;
+  flex: 1;
+  text-align: right;
+}
+
 .c-form {
   width: 50%;
   border-radius: 10px;
