@@ -9,16 +9,24 @@ header('Content-Type: application/json');
 $list[] ='';
 
 for ($i = 0; $i < count($respuesta); $i++) {
-    $list[$i] = ['id'=> $respuesta[$i]->getId(),
-    'name'=>$respuesta[$i]->getName(),
-    'login'=> $respuesta[$i]->getLogin(),
-    'pass'=>$respuesta[$i]->getPass(),
-    'correo'=>$respuesta[$i]->getCorreo(),
-    'localizacion'=> $respuesta[$i]->getLocalizacion(),
-    'imagen'=> $respuesta[$i]->getImagen(),
-    'rol'=>$respuesta[$i]->getRol()];
-}
-$datos= json_encode($list);
+    $id=$respuesta[$i]->getId();
+    $name=$respuesta[$i]->getName();
+    $login=$respuesta[$i]->getLogin();
+    $pass=$respuesta[$i]->getPass();
+    $correo=$respuesta[$i]->getCorreo();
+    $localizacion=$respuesta[$i]->getLocalizacion();
+    $imagen=$respuesta[$i]->getImagen();
+    $rol=$respuesta[$i]->getRol();
 
-echo $datos;
+    $list[$i] = array('id'=> "$id",
+    'name'=>"$name",
+    'login'=>"$login",
+    'pass'=>"$pass",
+    'correo'=>"$correo",
+    'localizacion'=>"$localizacion",
+    'imagen'=>"$imagen",
+    'rol'=>"$rol");
+}
+
+echo json_encode($list);
 ?>

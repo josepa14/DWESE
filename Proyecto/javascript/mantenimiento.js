@@ -1,12 +1,28 @@
 window.addEventListener("load", async function () {
    var editUser;
     var tabla = this.document.getElementById("editable2");
-    await  $(tabla).load('Vistas/Administracion/tablaUser.php',function(){
-        $(".editUser").click(function() {
-          editarUsuario(this.value);
-        });
+    fetch('Vistas/Administracion/tablaUser.php').then(respuesta=>respuesta.text()).
+        then(contenido=>{
+            tabla.innerHTML=contenido;
+            var btnEdits=document.querySelectorAll(".editUser");
+            for (let i=0;i<btnEdits.length;i++){
+                btnEdits[i].onclick=function() {
+                  editarUsuario(this.value);
+                }
+            }
+            this.document.querySelector(".borrarUser").onclick=function() {
+                borrarUsuario(this.value);
+          }
+        })
+    // await  $(tabla).load('Vistas/Administracion/tablaUser.php',function(){
+    //     $(".editUser").click(function() {
+    //       editarUsuario(this.value);
+    //     });
+    //     $(".borrarUser").click(function() {
+    //         borrarUsuario(this.value);
+    //       });
       
-     });
+//     });
 
 
     //para divs desplegables
@@ -31,11 +47,6 @@ window.addEventListener("load", async function () {
             }
         });
     });
-    // $("#editUser").live('click', function() {
-    //     alert("test");
-    // });
-    
-
 
    
     //agregar un usuario
@@ -139,7 +150,28 @@ window.addEventListener("load", async function () {
     //         }
     //     });
     // }
+    async function borrarUsuario(id){
     
+        try{
+            const respuestaRaw = await fetch("BD/api/adminUser/borrarUser.php?id="+id,{
+                method: "GET",
+            });
+            console.log("Voy a borrar "+id);
+              
+            const respuesta = respuestaRaw.json();
+            if (respuesta) {
+                // Y si llegamos hasta aquí, todo ha ido bien
+                $(tabla).load('Vistas/Administracion/tablaUser.php');
+                this.alert("USUARIO BORRADO");
+                
+            }
+      
+       
+
+        }catch(e){ 
+            console.log("el error es "+e);
+        }
+    }
      function editarUsuario(ev){
         alert(ev);
         var div=document.createElement("div");

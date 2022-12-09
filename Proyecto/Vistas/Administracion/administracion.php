@@ -1,15 +1,11 @@
 <?php
     include_once $_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/cargadores/cargador.php';
-if(!Login::UsuarioEstaLogueado() || Sesion::leer("user")->getRol() == "user"){
+if(!Login::UsuarioEstaLogueado() || Sesion::leer("user")->getRol() != "admin"){
     header("location:?menu=incio");
 }
 echo "<h1>Manejo de usuarios</h1>";
-$json = file_get_contents('BD/api/adminUser/cargarUser.php');
-echo $json;
-$obj = json_decode($json);
-echo "<br>";
-var_dump($obj);
-//https://www.youtube.com/watch?v=41HExhmyRaM&list=PLoRfWwOOv4jyR6jOLZY5biv5H0Qguq8Ea&index=4&ab_channel=FacultadAutodidacta
+
+
 echo '<script src="javascript/mantenimiento.js"></script>';
 echo '
         <a href="#" id="btn-toggle" class="btn-toggle">Administrar usuarios</a>   
@@ -35,7 +31,7 @@ echo '
         <div id="editable2"></table></section>';
 //fin tabla primera y ahora empiezo ejemplo tabla segunda
 
-
+//https://www.youtube.com/watch?v=41HExhmyRaM&list=PLoRfWwOOv4jyR6jOLZY5biv5H0Qguq8Ea&index=4&ab_channel=FacultadAutodidacta
 
 
 
