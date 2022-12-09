@@ -1,7 +1,6 @@
 .c-menu {
   background-color: yellow;
   display: flex;
-  align-items: stretch;
   padding: 20px;
   width: 100%;
 }
@@ -18,6 +17,29 @@
   text-align: right;
 }
 
+.c-menu__opciones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.c-menu__opciones li a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding: 0.5em 1em;
+}
+
+.c-menu__opciones li a:hover {
+  background: tomato;
+  color: white;
+}
+
+@media screen and (min-width: 480px) {
+  .c-menu__opciones ul {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
 .c-form {
   width: 50%;
   border-radius: 10px;

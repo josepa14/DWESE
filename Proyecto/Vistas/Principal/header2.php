@@ -1,9 +1,9 @@
 <header>
     <div class="c-menu">
         <div class="c-menu__izquierda">
+            
+            <ul class="c-menu__opciones">
             <a href="#">RADIOJAIMITO</a>
-            <ul class="">
-
                 <li class=""><a class="" href="?menu=concursos">Concursos <span class="sr-only">(current)</span></a></li>
                 <?php
                
