@@ -19,27 +19,29 @@
         }
     }
 ?>
-<div class='w-50 p-3 container'>
-    <div class='login-form'>
+<div class='g--global'>
+    <div class='c-form login-form'>
         <form action='' method='post' novalidate>
-            <h2 class='text-center'>Identificate</h2>
+            <h2 class='c-form__h1'>Identificate</h2>
             <div class='form-group'>
+            <label for="usuario">usuario</label>
                 <input type='text' class='form-control' name='usuario' placeholder='Usuario' required='required'>
                 <?= $valida->ImprimirError('usuario') ?>
             </div>
             <div class='form-group'>
+            <label for="contrasena">usuario</label>
                 <input type='password' class='form-control' name='contrasena' placeholder='Contraseña'
                     required='required'>
                 <?= $valida->ImprimirError('contrasena') ?>
             </div>
             <div class='form-group'>
-                <button type='submit' name='submit' class='btn btn-primary btn-block'>Logueate</button>
+                <button type='submit' name='submit' class='enviar g--largo'>Logueate</button>
             </div>
             <div class='clearfix'>
-                <label class='pull-left checkbox-inline'>
-                    <input type='checkbox' name='recuerdame'> Recuerdame</label>
+                <label class=''>
+
             </div>
         </form>
-        <p class='text-center'><a href='?menu=registro'>Crear una Cuenta</a></p>
+        <p class='text-center'>¿Aun no estas registrado? <a href='?menu=registro'><strong>Create una Cuenta</strong></a></p>
     </div>
 </div>

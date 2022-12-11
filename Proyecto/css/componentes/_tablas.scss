@@ -1,0 +1,52 @@
+ @mixin botones{
+    padding: 5px;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 8px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px #666666;
+    text-shadow: 0px 0px 0px #666666;
+ }
+.c-admin{
+    padding: 3%;
+}
+.c-tabla{
+
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    &__head th{
+        background-color: rgb(251, 255, 2);
+        border-bottom: solid 5px #001F3F;
+        padding: 18px;
+    }
+    tr:nth-child(even){
+        background-color: #ddd;
+    }
+}
+
+.c-tabla .c-tabla__head{
+    width: 100%;
+}
+.c-tabla .c-tabla__body tr:hover{
+        background-color: rgba(255, 99, 71, 0.384);
+        padding: 0;
+        margin: 0;
+    }
+.c-tabla tbody tr td{
+    padding: 0;
+}
+.editar{
+@include botones();
+    background: #ed9005;
+}
+.editar:hover{
+    background-color: rgb(128, 87, 0);
+}
+.borrar{
+    @include botones;
+    background-color: red;
+}
+.borrar:hover{
+    background-color: #3f000e;
+}

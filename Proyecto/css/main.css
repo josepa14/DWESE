@@ -1,50 +1,139 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a:link, a:visited, a:active {
+  text-decoration: none;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
 .c-menu {
-  background-color: yellow;
+  background-color: orange;
   display: flex;
-  padding: 20px;
+  align-items: stretch;
   width: 100%;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .c-menu__izquierda {
-  background-color: red;
   flex: 1;
-  text-align: center;
+  display: flex;
 }
 
 .c-menu__derecha {
-  background-color: brown;
   flex: 1;
   text-align: right;
+  padding-right: 1em;
+}
+.c-menu__derecha p {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  align-items: center;
+}
+.c-menu__derecha p a {
+  color: white;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: rgb(255, 123, 0);
+  padding-bottom: 0.9em;
+  border-radius: 0.25em;
+}
+.c-menu__derecha p a:hover {
+  border-radius: 0.25em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-bottom: 0.9em;
+  background: tomato;
+  color: white;
 }
 
 .c-menu__opciones {
+  display: flex;
+  flex-direction: row;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  text-decoration: none;
 }
-.c-menu__opciones li a {
+.c-menu__opciones a {
   color: white;
   display: block;
   text-decoration: none;
   padding: 0.5em 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .c-menu__opciones li a:hover {
   background: tomato;
   color: white;
+  border-radius: 0.25em;
 }
 
-@media screen and (min-width: 480px) {
-  .c-menu__opciones ul {
-    display: flex;
-    justify-content: flex-start;
-  }
+.g--global {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .c-form {
-  width: 50%;
+  width: 30%;
   border-radius: 10px;
   padding: 5%;
-  background-color: #fbfbfb;
+  background-color: rgba(236, 234, 234, 0.3568627451);
 }
 .c-form p {
   font-size: 14px;
@@ -83,23 +172,29 @@ label {
   float: center;
 }
 
-button {
-  height: 45px;
-  padding-left: 5px;
-  padding-right: 5px;
+.enviar {
+  font-family: Verdana, Geneva, sans-serif;
+  padding: 5px;
   margin-bottom: 20px;
   margin-top: 10px;
   text-transform: uppercase;
   background-color: orange;
   border-color: orange;
   border-style: solid;
-  border-radius: 10px;
-  width: 420px;
+  border-radius: 0.25em;
   cursor: pointer;
 }
 
-button p {
-  color: #fff;
+.g--largo {
+  padding-top: 10px;
+  width: 420px;
+  padding-bottom: 10px;
+}
+
+.enviar:hover {
+  background-color: tomato;
+  font-size: 17px;
+  color: white;
 }
 
 .c-padre__aviso {
@@ -138,46 +233,86 @@ button p {
   border: 1px solid #97d848;
 }
 
+.c-admin {
+  padding: 3%;
+}
+
+.c-tabla {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.c-tabla__head th {
+  background-color: rgb(251, 255, 2);
+  border-bottom: solid 5px #001F3F;
+  padding: 18px;
+}
+.c-tabla tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+.c-tabla .c-tabla__head {
+  width: 100%;
+}
+
+.c-tabla .c-tabla__body tr:hover {
+  background-color: rgba(255, 99, 71, 0.384);
+  padding: 0;
+  margin: 0;
+}
+
+.c-tabla tbody tr td {
+  padding: 0;
+}
+
+.editar {
+  padding: 5px;
+  font-size: 20px;
+  color: #ffffff;
+  margin: 8px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px #666666;
+  text-shadow: 0px 0px 0px #666666;
+  background: #ed9005;
+}
+
+.editar:hover {
+  background-color: rgb(128, 87, 0);
+}
+
+.borrar {
+  padding: 5px;
+  font-size: 20px;
+  color: #ffffff;
+  margin: 8px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px #666666;
+  text-shadow: 0px 0px 0px #666666;
+  background-color: red;
+}
+
+.borrar:hover {
+  background-color: #3f000e;
+}
+
 .seccionToggle {
   display: none;
   background: #fff;
   color: #001F3F;
-  padding: 50px 0;
   text-align: center;
-}
-
-.seccionToggle h2 {
-  font-size: 60px;
-  margin-top: 50px;
-}
-
-.seccionToggle p {
-  font-size: 20px;
-  margin-bottom: 50px;
-}
-
-.seccionToggle button {
-  background: none;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 20px 40px;
-  display: inline-block;
-  border: 5px solid #001F3F;
-  transition: 0.3s all ease;
-}
-
-.seccionToggle button:hover {
-  border: 5px solid #0074D9;
-  color: #0074D9;
+  margin-bottom: 10px;
 }
 
 .btn-toggle {
+  padding: auto;
+  margin-top: 5px;
   height: 50px;
   line-height: 50px;
   font-size: 24px;
   font-weight: bold;
   color: #000;
   display: block;
+  border-radius: 0.25em;
   background: #FFDC00;
   text-align: center;
 }

@@ -1,0 +1,83 @@
+//http://w3.unpocodetodo.info/css3/flex-menu.php
+
+$radio: 0.25em;
+@mixin menuHover{
+    background: tomato;
+    color: white;
+}
+@mixin paddinsMenu{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+@mixin paddinsA{
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.c-menu {
+    background-color: orange;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+
+
+}
+
+.c-menu__izquierda {
+
+    flex: 1;
+    display: flex;
+}
+
+.c-menu__derecha {
+    flex: 1;
+    // align-items: center;
+    text-align: right;
+    padding-right: 1em;
+
+    p   {
+        @include paddinsMenu();
+        align-items: center;
+        
+        a{
+            color: white;
+            @include paddinsA();
+            background-color: rgb(255, 123, 0);
+            padding-bottom: 0.9em;
+            border-radius: $radio;
+        }
+        a:hover {
+            border-radius: $radio;
+            @include paddinsMenu();
+            padding-bottom: 0.9em;
+            @include menuHover(); 
+        }
+    }
+
+}
+
+.c-menu__opciones {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-decoration: none;
+
+    a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        padding: .5em 1em;
+        @include paddinsMenu();
+    }
+}
+
+.c-menu__opciones li a:hover {
+  @include menuHover();
+  border-radius: $radio;
+}
