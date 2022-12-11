@@ -5,8 +5,8 @@ if(!Login::UsuarioEstaLogueado() || Sesion::leer("user")->getRol() != "admin"){
 }
 echo '<script src="javascript/mantenimiento.js"></script>';
 echo '  <div class="c-admin">
-        <a href="#" id="btn-toggle" class="btn-toggle">Administrar usuarios</a>   
-        <section class="seccionToggle">
+        <a href="#" id="c-btn-toggle" class="c-btn-toggle">Administrar usuarios</a>   
+        <section class="c-seccionToggle">
             <table class="c-tabla">
                 <tr id="insertar" class="insertar">
             
@@ -27,7 +27,7 @@ echo '  <div class="c-admin">
             </table>
         <div id="editable2"></table></section>
 
-        <a href="#" id="btn-toggle" class="btn-toggle">Administrar Concursos</a>   
+        <a href="#" id="c-btn-toggle" class="c-btn-toggle">Administrar Concursos</a>   
         
         </div>';
 //fin tabla primera y ahora empiezo ejemplo tabla segunda

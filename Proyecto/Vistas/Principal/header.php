@@ -3,13 +3,13 @@
         <nav class="c-menu__izquierda">
             
             <ul class="c-menu__opciones">
-             <li><a href="#">RADIOJAIMITO</a><li>
+             <li><a href="#"><img src="imagenes/logo.png"/></a><li>
                 <li class=""><a class="" href="?menu=concursos">Concursos</a></li>
                 <?php
                
                 if (Sesion::existe("user") && Sesion::leer("user")->getRol() == "admin") {
-                    echo '<li class="">
-                        <a class="" href="?menu=administracion">Administracion</a>
+                    echo '<li>
+                        <a href="?menu=administracion">Administracion</a>
                     </li>';
                 }
 

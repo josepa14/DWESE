@@ -28,7 +28,7 @@
             "</td><td> ".$fila->getLocalizacion().
             "</td><td> ".$fila->getImagen().
             "</td><td> ".$fila->getRol().
-            "</td><td><button class='editUser editar' value=".$fila->getId()." >Editar</button><button class='borrarUser borrar' value=".$fila->getId()." >Borrar</button></td></tr>";
+            "</td><td><button class='editUser editar' value=".$fila->getId()." >Editar</button><button class='borrarUser borrar' value=".$fila->getId()." ><i class='fa fa-trash'></i></button></td></tr>";
         
         }
 

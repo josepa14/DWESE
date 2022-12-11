@@ -29,8 +29,8 @@ window.addEventListener("load", async function () {
     $(document).ready(function(){
         var estado = false;
     
-        $('#btn-toggle').on('click',function(){
-            $('.seccionToggle').slideToggle();
+        $('#c-btn-toggle').on('click',function(){
+            $('.c-seccionToggle').slideToggle();
     
             if (estado == true) {
                 $(this).text("Administrar usuarios");

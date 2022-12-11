@@ -1,4 +1,4 @@
-.seccionToggle {
+.c-seccionToggle {
     display: none;
     background: #fff;
     color: #001F3F;
@@ -6,7 +6,7 @@
     margin-bottom: 10px;
   }
     
-  .btn-toggle {
+  .c-btn-toggle {
     padding: auto;
     margin-top: 5px;
     height: 50px;
@@ -16,9 +16,12 @@
     color: #000;
     display: block;
     border-radius: 0.25em;
-    background: #FFDC00;
-    text-align: center; }
-    .btn-toggle:hover {
+    background: rgb(252,149,2);
+    background: linear-gradient(144deg, rgba(252,149,2,0.7595413165266106) 0%, rgba(249,247,109,1) 100%);
+    text-align: center; 
+  }
+    .c-btn-toggle:hover {
+      color: white;
       text-decoration: none; }
   
   @media screen and (max-width: 500px) {
