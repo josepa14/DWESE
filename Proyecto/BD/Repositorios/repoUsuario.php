@@ -42,6 +42,23 @@ class RepoUsuario
        }
        
     }
+    public function getById($id)
+    {
+
+        $sql = "SELECT * FROM `usuario` WHERE `idParticipante`= '$id';";
+        $result = $this->con->query($sql);
+        $consulta = $result->fetch(PDO::FETCH_ASSOC);
+        $tamano = count($consulta);
+       if($tamano > 0){
+        $user = new Usuario($consulta['idParticipante'],$consulta['name'],
+        $consulta['login'],$consulta['password'],$consulta['correo'],
+        $consulta['localizacion'],$consulta['imagen'],$consulta['rol']);
+        return $user;
+       } else{
+        return 0;
+       }
+       
+    }
     public function insertUser(Usuario $usuario){
         $name = $usuario->getName();
         $login = $usuario->getLogin();

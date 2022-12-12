@@ -1,4 +1,3 @@
-<script src="javascript/mantenimiento2.js"></script>
 <table id="editable" class="c-tabla">
     <thead class="c-tabla__head">
         <tr>

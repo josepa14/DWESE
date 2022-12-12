@@ -2,6 +2,7 @@
 
 class ControllerUsuario{
  
+
     public static function registrar(Usuario $usuario){
         $ru = new RepoUsuario;
         if ($ru->insertUser($usuario))
@@ -18,6 +19,11 @@ class ControllerUsuario{
         $cantidad = $usuarios->getAll();
         return $cantidad;
     }
-}   
+   public static function obtenerUno($id){
+        $ru = new RepoUsuario;
+        $usuario = $ru->getById($id);
+        return $usuario;
+   }
+}
 
 ?>
