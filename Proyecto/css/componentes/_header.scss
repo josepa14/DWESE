@@ -21,14 +21,12 @@ $radio: 0.25em;
 
 
 
-}
-
-.c-menu__izquierda {
+&__izquierda {
 
     flex: 1;
     display: flex;
 }
-
+}
 .c-menu__derecha {
     flex: 1;
     // align-items: center;

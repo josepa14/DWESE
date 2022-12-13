@@ -128,7 +128,7 @@ window.addEventListener("load", async function () {
     }
 
     function editarUsuario(id) {
-        url = "bd/api/adminUser/UpdateUser.php?idParticipante=" + id;
+        url = "bd/api/adminUser/getUser.php?idParticipante=" + id;
         console.log(url);
         let datos = obtenerDatos(url);
         var div = document.createElement("div");
@@ -144,12 +144,22 @@ window.addEventListener("load", async function () {
         //id 
         {
         var inputId = document.createElement("input");
+        var labelId = document.createElement("label");
+        var inputIdV= document.createElement("input");
+        inputIdV.value= datos.id;
+        labelId.innerHTML = "Identificador:";
         var pId = document.createElement("p");
-        inputId.disabled = true;
+        inputIdV.disabled=true;
+        inputId.style.display = "none";
         inputId.value = datos.id;
+        inputId.className="idE";
+        inputId.name="idE";
+        pId.appendChild(labelId);
+        pId.appendChild(inputIdV);
         pId.appendChild(inputId);
         form.appendChild(pId);
         }
+
         //name
 
        { var inputName = document.createElement("input");
@@ -157,7 +167,8 @@ window.addEventListener("load", async function () {
         var pName = document.createElement("p");
         labelName.innerHTML = "nombre:";
         inputName.value = datos.name;
-        inputName.name = datos.name;
+        inputName.name = "nombreE";
+        inputName.className="nombreE";
         pName.appendChild(labelName);
         pName.appendChild(inputName);
         form.appendChild(pName);}
@@ -168,7 +179,8 @@ window.addEventListener("load", async function () {
         var pLogin = document.createElement("p");
         labelLogin.innerHTML = "Login:";
         inputLogin.value = datos.login;
-        inputLogin.name = datos.login;
+        inputLogin.name = "loginE";
+        inputLogin.className="loginE";
         pLogin.appendChild(labelLogin);
         pLogin.appendChild(inputLogin);
         form.appendChild(pLogin);}
@@ -177,7 +189,9 @@ window.addEventListener("load", async function () {
         var lPass = document.createElement("label");
         var pPass = document.createElement("p");
         lPass.innerHTML = "Pass:";
-        iPass.value = datos.password;
+        iPass.value = datos.pass;
+        iPass.name="passE";
+        iPass.className="passE";
         iPass.type = "password";
         pPass.appendChild(lPass);
         pPass.appendChild(iPass);
@@ -187,6 +201,8 @@ window.addEventListener("load", async function () {
         var lCorreo = document.createElement("label");
         var pCorreo = document.createElement("p");
         lCorreo.innerHTML = "Correo:";
+        iCorreo.name="correoE";
+        iCorreo.className="correoE";
         iCorreo.value = datos.correo;
         pCorreo.appendChild(lCorreo);
         pCorreo.appendChild(iCorreo);
@@ -197,6 +213,8 @@ window.addEventListener("load", async function () {
          var pl = document.createElement("p");
          ll.innerHTML = "ubicacion:";
          il.value = datos.localizacion;
+         il.name="localizacionE";
+         il.className="localizacionE";
          pl.appendChild(ll);
          pl.appendChild(il);
          form.appendChild(pl);}
@@ -206,6 +224,8 @@ window.addEventListener("load", async function () {
          var pi = document.createElement("p");
          li.innerHTML = "Imagen:";
          ii.value = datos.imagen;
+         ii.name="imagenE";
+         ii.className="imagenE";
          pi.appendChild(li);
          pi.appendChild(ii);
          form.appendChild(pi);}
@@ -214,6 +234,8 @@ window.addEventListener("load", async function () {
          var lr = document.createElement("label");
          var pr = document.createElement("p");
          lr.innerHTML = "Rol:";
+         ir.className="rolE";
+         ir.name="rolE";
          ir.value = datos.rol;
          pr.appendChild(lr);
          pr.appendChild(ir);
@@ -230,20 +252,29 @@ window.addEventListener("load", async function () {
          form.appendChild(bton);
 
         div.appendChild(form);
-        modal(div);
-
-        bton.onclick=function(){
+        
+        var modal2=true;
+        console.log("1 "+ modal2)
+        bton.onclick=async function(){
             //valida
             var datos2 = new FormData(this.form);
-            debugger;
             console.log(datos2);
+           await fetch("BD/api/adminUser/updateUser.php",{method:"POST",body:datos2});
+            var caja = this.parentElement.parentElement.parentElement.parentElement;
+            caja.parentElement.removeChild(caja);
+           
+            modal2=false;       
         }
+        modal2=false
+        console.log("2 "+modal2)
+        modal(div,modal2);
     };
 
 
-    function modal(div) {
+     function modal(div,modal2) {
         //modal gris
         var modal = this.document.createElement("div");
+        modal.id="modal";
         modal.style.position = "fixed";
         modal.style.background = "#020202";
         modal.style.opacity = 0.5;
@@ -253,7 +284,8 @@ window.addEventListener("load", async function () {
         modal.style.height = "100%";
         modal.style.zIndex = 100;
         document.body.appendChild(modal);
-
+    
+        
         //modal caja
         var caja = document.createElement("div");
         var left = parseInt((window.innerWidth - 400) / 2) + "px";
@@ -291,10 +323,11 @@ window.addEventListener("load", async function () {
         cerrar.style.top = "5px";
         cerrar.style.right = "10px";
         caja.style.overflow = "hidden";
+       
         cerrar.onclick = function () {
             var caja = this.parentElement.parentElement;
             caja.parentElement.removeChild(caja);
-            modal.parentElement.removeChild(modal);
+            
         }
         cabecera.appendChild(cerrar);
         //modal contenido de la caja

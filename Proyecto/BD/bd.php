@@ -9,8 +9,8 @@ class BD
     public static function getConnection()
     {
         try {
-        //    $connection = new PDO('mysql:host=localhost;dbname=proyecto', 'root');
-          $connection = new PDO('mysql:host=localhost;dbname=proyecto', 'root', '1234');
+            $connection = new PDO('mysql:host=localhost;dbname=proyecto', 'root');
+         // $connection = new PDO('mysql:host=localhost;dbname=proyecto', 'root', '1234');
         } catch (PDOException $e) {
             throw new PDOException("Error en la conexión hola!!: " . $e->getMessage());
         }

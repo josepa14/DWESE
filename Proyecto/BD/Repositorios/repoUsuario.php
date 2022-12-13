@@ -66,8 +66,9 @@ class RepoUsuario
         $correo = $usuario->getCorreo();
         $loc = $usuario->getLocalizacion();
         $img = $usuario->getImagen();
-        $sql = "INSERT INTO `usuario`(`name`, `login`, `password`, `correo`, `localizacion`, `imagen`) 
-        VALUES ('$name','$login','$pass','$correo','$loc','$img');";
+        $rol = $usuario->getRol();
+        $sql = "INSERT INTO `usuario`(`name`, `login`, `password`, `correo`, `localizacion`, `imagen`,`rol`) 
+        VALUES ('$name','$login','$pass','$correo','$loc','$img','$rol');";
         if($result = $this->con->exec($sql)){
             return true;
         }
@@ -77,6 +78,23 @@ class RepoUsuario
         $sql = "DELETE FROM `usuario` WHERE `idParticipante` = $id";
         if($result = $this->con->exec($sql)){
             return true;
+        }
+        else return false;
+       }
+       public function updateUser($id,$usuario){
+
+        $name = $usuario->getName();
+        $login = $usuario->getLogin();
+        $pass = $usuario->getPass();
+        $correo = $usuario->getCorreo();
+        $loc = $usuario->getLocalizacion();
+        $img = $usuario->getImagen();
+        $rol = $usuario->getRol();
+
+        $sql = "UPDATE `usuario` SET `name`='$name',`login`='$login',`password`='$pass',`correo`='$correo',
+        `imagen`='$img',`rol`='$rol' WHERE `idParticipante` = $id";
+        if($this->con->exec($sql)){
+            return http_response_code(201);
         }
         else return false;
        }
