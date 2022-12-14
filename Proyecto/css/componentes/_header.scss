@@ -1,11 +1,13 @@
 //http://w3.unpocodetodo.info/css3/flex-menu.php
 
 $radio: 0.25em;
-@mixin menuHover{
+
+@mixin menuHover {
     background: tomato;
     color: white;
 }
-@mixin paddinsMenu{
+
+@mixin paddinsMenu {
     padding-top: 1em;
     padding-bottom: 1.0em;
 }
@@ -21,23 +23,24 @@ $radio: 0.25em;
 
 
 
-&__izquierda {
+    &__izquierda {
 
-    flex: 1;
-    display: flex;
+        flex: 1;
+        display: flex;
+    }
 }
-}
+
 .c-menu__derecha {
     flex: 1;
     // align-items: center;
     text-align: right;
     padding-right: 1em;
 
-    p   {
+    p {
         @include paddinsMenu();
         align-items: center;
-        
-        a{
+
+        a {
             padding-left: 0.7em;
             padding-right: 0.7em;
             color: white;
@@ -45,10 +48,11 @@ $radio: 0.25em;
             background-color: rgb(255, 123, 0);
             border-radius: $radio;
         }
+
         a:hover {
             border-radius: $radio;
             @include paddinsMenu();
-            @include menuHover(); 
+            @include menuHover();
         }
     }
 
@@ -70,6 +74,6 @@ $radio: 0.25em;
 }
 
 .c-menu__opciones li a:hover {
-  @include menuHover();
-  border-radius: $radio;
+    @include menuHover();
+    border-radius: $radio;
 }

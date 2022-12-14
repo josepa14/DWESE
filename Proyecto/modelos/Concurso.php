@@ -2,6 +2,7 @@
 class Concurso{
     protected $idConcurso;
     protected $name;
+    protected $descripcion;
     protected $fecha_ini_inscrip;
     protected $fecha_fin_inscrip;
     protected $fecha_ini_con;
@@ -10,9 +11,10 @@ class Concurso{
 
    	
     
-    public function __construct($idConcurso=null,$name,$fecha_ini_inscrip,$fecha_fin_inscrip,$fecha_ini_con,$fecha_fin_con) {
+    public function __construct($idConcurso=null,$name,$descripcion,$fecha_ini_inscrip,$fecha_fin_inscrip,$fecha_ini_con,$fecha_fin_con) {
         $this->idConcurso = $idConcurso;
         $this->name = $name;
+        $this->descripcion = $descripcion;
         $this->fecha_ini_inscrip = $fecha_ini_inscrip;
         $this->fecha_fin_inscrip = $fecha_fin_inscrip;
         $this->fecha_ini_con = $fecha_ini_con;
@@ -139,6 +141,26 @@ class Concurso{
 
         return $this;
     }
+
+        /**
+         * Get the value of descripcion
+         */ 
+        public function getDescripcion()
+        {
+                return $this->descripcion;
+        }
+
+        /**
+         * Set the value of descripcion
+         *
+         * @return  self
+         */ 
+        public function setDescripcion($descripcion)
+        {
+                $this->descripcion = $descripcion;
+
+                return $this;
+        }
 }
 
 ?>

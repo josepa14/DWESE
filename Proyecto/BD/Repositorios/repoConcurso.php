@@ -22,6 +22,7 @@ class RepoConcurso
             $concursos[$i] = new Concurso(
                 $consulta[$i]['idConcurso'],
                 $consulta[$i]['name'],
+                $consulta[$i]['descripcion'],
                 $consulta[$i]['fecha_ini_inscrip'],
                 $consulta[$i]['fecha_fin_inscrip'],
                 $consulta[$i]['fecha_ini_con'],
@@ -41,6 +42,7 @@ class RepoConcurso
             $concurso = new Concurso(
                 $consulta['idConcurso'],
                 $consulta['name'],
+                $consulta['descripcion'],
                 $consulta[' fecha_ini_inscrip'],
                 $consulta['fecha_fin_inscrip'],
                 $consulta['fecha_ini_con'],
