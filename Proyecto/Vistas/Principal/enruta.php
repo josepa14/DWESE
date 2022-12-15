@@ -30,6 +30,10 @@ if (isset($_GET['menu'])) {
         require_once './Vistas/Registro/registra.php';
     
     }
+    if ($_GET['menu'] == "concurso") {
+        require_once './Vistas/concursos/concurso.php';
+    
+    }
 
     
 

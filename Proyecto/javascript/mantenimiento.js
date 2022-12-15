@@ -241,7 +241,7 @@ window.addEventListener("load", async function () {
          pr.appendChild(ir);
          form.appendChild(pr);}
 
-        //
+        //boton
         var bton = document.createElement("input");
         var pb = document.createElement("p");
         bton.type="button";
@@ -252,26 +252,26 @@ window.addEventListener("load", async function () {
          form.appendChild(bton);
 
         div.appendChild(form);
-        
-        var modal2=true;
-        console.log("1 "+ modal2)
         bton.onclick=async function(){
             //valida
             var datos2 = new FormData(this.form);
             console.log(datos2);
            await fetch("BD/api/adminUser/updateUser.php",{method:"POST",body:datos2});
             var caja = this.parentElement.parentElement.parentElement.parentElement;
+            debugger;
             caja.parentElement.removeChild(caja);
+            borrarElemento(document.getElementById("modal"));
            
-            modal2=false;       
+           
         }
-        modal2=false
-        console.log("2 "+modal2)
-        modal(div,modal2);
+      
+        modal(div);
     };
 
-
-     function modal(div,modal2) {
+    function borrarElemento(objeto){
+        objeto.parentNode.removeChild(objeto);
+    }
+     function modal(div) {
         //modal gris
         var modal = this.document.createElement("div");
         modal.id="modal";
@@ -327,6 +327,7 @@ window.addEventListener("load", async function () {
         cerrar.onclick = function () {
             var caja = this.parentElement.parentElement;
             caja.parentElement.removeChild(caja);
+            modal.parentElement.removeChild(modal);
             
         }
         cabecera.appendChild(cerrar);

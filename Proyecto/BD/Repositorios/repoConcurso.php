@@ -43,13 +43,34 @@ class RepoConcurso
                 $consulta['idConcurso'],
                 $consulta['name'],
                 $consulta['descripcion'],
-                $consulta[' fecha_ini_inscrip'],
+                $consulta['fecha_ini_inscrip'],
                 $consulta['fecha_fin_inscrip'],
                 $consulta['fecha_ini_con'],
                 $consulta['fecha_fin_con']);
             return $concurso;
         }
     }
+
+    public function getConcursoById($id)
+    {
+
+        $sql = "SELECT * FROM `concurso` WHERE `idConcurso`= '$id';";
+        $result = $this->con->query($sql);
+        $consulta = $result->fetch(PDO::FETCH_ASSOC);
+        $tamano = count($consulta);
+        if ($tamano > 0) {
+            $concurso = new Concurso(
+                $consulta['idConcurso'],
+                $consulta['name'],
+                $consulta['descripcion'],
+                $consulta['fecha_ini_inscrip'],
+                $consulta['fecha_fin_inscrip'],
+                $consulta['fecha_ini_con'],
+                $consulta['fecha_fin_con']);
+            return $concurso;
+        }
+    }
+
     public function insertUser(Concurso $concurso)
     {
         $name = $concurso->getName();

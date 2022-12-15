@@ -19,7 +19,7 @@ foreach($cantidad as $fila) {
                     <p><strong>Fecha fin Inscripcion: </strong>'.$fila->getFecha_fin_inscrip().' </p>
             </div>
         <div class="pie">
-        <a href="?menu=concursos?id='.$fila->getIdConcurso().'">Ver concurso</a>
+        <a href="?menu=concurso&id='.$fila->getIdConcurso().'">Ver concurso</a>
         </div>
     </div>';
         

@@ -56,6 +56,16 @@ body {
   font-family: Verdana, Geneva, sans-serif;
 }
 
+#cuerpo {
+  min-height: 80vh;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  justify-content: center;
+}
+
 .c-menu {
   background-color: orange;
   display: flex;
