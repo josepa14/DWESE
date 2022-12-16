@@ -19,4 +19,7 @@ function micargador($clase)
     if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/BD/controladores/' . $clase . '.php')) {
         include $_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/BD/controladores/' . $clase . '.php';
     }
+    if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/Vistas/Administracion/' . $clase . '.php')) {
+        include $_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/Vistas/Administracion/' . $clase . '.php';
+    }
 }

@@ -28,4 +28,22 @@ class RepoParticipantes
         }
         return $participantes;
     }
+    public function insertarParticipante($idParticipante,$idConcurso)
+   
+    {
+        $idcon = $idConcurso;
+        $sql = "INSERT INTO `participacion`(`Concurso_idConcurso`, `usuario_idParticipante`) VALUES ('$idParticipante','$idcon')";
+        $result = $this->con->query($sql);
+       
+        return $result;
+    }
+    public function anularParticipante($idParticipante,$idConcurso)
+   
+    {
+        $sql = "DELETE FROM `participacion` WHERE `usuario_idParticipante` ='$idParticipante' AND `Concurso_idConcurso` ='$idConcurso'";
+        $result = $this->con->query($sql);
+       
+        return $result;
+    }
 }
+

@@ -9,10 +9,10 @@ class RepoConcurso
         $this->con = BD::getConnection();
     }
 
-    public function getAll()
+    public function getAll($limit,$offset)
     {
 
-        $sql = "SELECT * FROM `concurso`";
+        $sql = "SELECT * FROM `concurso` LIMIT $limit OFFSET $offset";
         $result = $this->con->query($sql);
         $concursos = [];
 
@@ -83,5 +83,10 @@ class RepoConcurso
         if ($result = $this->con->exec($sql)) {
             return true;
         } else return false;
+    }
+    public function contarPaginas(){
+        $sql = "SELECT count(*) AS conteo FROM concurso";
+        $result = $this->con->query($sql);
+        return $result->fetchObject()->conteo;
     }
 }

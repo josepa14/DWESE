@@ -1,0 +1,53 @@
+.c-paginacion {
+    margin: 20px;
+    height: 36px;
+}
+.c-paginacion ul {
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+.c-paginacion li {
+    display: inline;
+}
+.c-paginacion a {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    float: left;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+}
+.c-paginacion a:hover, .c-paginacion .active a {
+    background-color: #F5F5F5;
+}
+.c-paginacion .active a {
+    color: #999999;
+    cursor: default;
+}
+.c-paginacion .disabled a, .c-paginacion .disabled a:hover {
+    background-color: transparent;
+    color: #999999;
+    cursor: default;
+}
+.c-paginacion li:first-child a {
+    border-left-width: 1px;
+    border-radius: 3px 0 0 3px;
+}
+.c-paginacion li:last-child a {
+    border-radius: 0 3px 3px 0;
+}
+.c-paginacion-centered {
+    text-align: center;
+}
+.c-paginacion-right {
+    text-align: right;
+}

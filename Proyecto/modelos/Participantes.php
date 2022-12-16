@@ -7,7 +7,7 @@ class Participantes
     protected $imagen;
     protected $juez;
 
-    public function __construct($id = null, $name, $login, $pass, $correo, $localizacion = null, $imagen = null, $juez = FALSE)
+    public function __construct($id = null, $name,  $correo, $imagen = null, $juez = FALSE)
     {
         $this->id = $id;
         $this->name = $name;

@@ -39,6 +39,24 @@ window.addEventListener("load", async function () {
             }
         });
     });
+    $(document).ready(function () {
+        var estado = false;
+
+        $('#c-btn-toggle2').on('click', function () {
+            $('.c-seccionToggle').slideToggle();
+
+            if (estado == true) {
+                $(this).text("Administrar Concursos");
+                $('body').css({
+                    "overflow": "auto"
+                });
+                estado = false;
+            } else {
+                $(this).text("Cerrar Concuros");
+                estado = true;
+            }
+        });
+    });
 
 
     //agregar un usuario
