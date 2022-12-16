@@ -1,6 +1,9 @@
 <?php
 class Concurso{
+
+//@column @primarykey
     protected $idConcurso;
+//@column    
     protected $name;
     protected $descripcion;
     protected $fecha_ini_inscrip;

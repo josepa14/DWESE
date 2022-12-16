@@ -26,13 +26,13 @@
             <div class='form-group'>
             <label for="usuario">usuario</label>
                 <input type='text' class='form-control' name='usuario' placeholder='Usuario' required='required'>
-                <?= $valida->ImprimirError('usuario') ?>
+                <?php  echo '<br>'.$valida->ImprimirError('usuario'); ?>
             </div>
             <div class='form-group'>
             <label for="contrasena">usuario</label>
                 <input type='password' class='form-control' name='contrasena' placeholder='Contraseña'
                     required='required'>
-                <?= $valida->ImprimirError('contrasena') ?>
+                <?php  echo '<br>'.$valida->ImprimirError('contrasena'); ?>
             </div>
             <div class='form-group'>
                 <button type='submit' name='submit' class='enviar g--largo'>Logueate</button>

@@ -15,7 +15,7 @@
         <?php
          include_once $_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/cargadores/cargador.php';
         $rp = new RepoConcurso();
-        $concursos = $rp->getAll();
+        $concursos = $rp->getAll(25,0);
 
         foreach ($concursos as $fila) {
 

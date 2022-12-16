@@ -22,4 +22,11 @@ function micargador($clase)
     if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/Vistas/Administracion/' . $clase . '.php')) {
         include $_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/Vistas/Administracion/' . $clase . '.php';
     }
+    if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/Vistas/Registro/' . $clase . '.php')) {
+        include $_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/Vistas/Registro/' . $clase . '.php';
+    }
+    if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/vendor/autoload.php')) {
+        include $_SERVER['DOCUMENT_ROOT'] . '/training/proyecto/vendor/autoload.php';
+    }
+    
 }

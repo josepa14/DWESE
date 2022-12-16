@@ -1,24 +1,28 @@
 <?php
 
 $valida = new Validacion();
+
 if (isset($_POST['submit'])) {
   $valida->Requerido('login');
   $valida->Requerido('nombre');
   $valida->Requerido('email');
   $valida->Requerido('pass');
   $usuario = new Usuario('', $_POST['nombre'], $_POST['login'], $_POST['pass'], $_POST['email']);
-  //Comprobamos validacion
-  var_dump($usuario);
+  include 'email.php';
+
+
   if ($valida->ValidacionPasada()) {
     ControllerUsuario::registrar($usuario);
+    mandarEmail($_POST['login'], $_POST['email']);
     header("location:?menu=inicio");
     //este if no me funciona y no se porque
 
   } else
-    print_r("no ha pasado validacion");
+
+    print_r("no se ha podido registrar, porfavor Compruebe los errores indicados:");
 }
 ?>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <div class="g--global">
   <div class="c-form g--margin-left-15">
     <div class="c-form__campos">
@@ -32,13 +36,19 @@ if (isset($_POST['submit'])) {
             <span class="g--obligatorio">*</span>
           </label>
           <input type="text" name="login" id="login" required="obligatorio" placeholder="Escriba un usuario">
+          <?php
+          echo '<br>'.$valida->ImprimirError('login');
+          ?>
         </p>
 
         <p>
           <label for="nombre">Tu nombre
             <span class="g--obligatorio">*</span>
           </label>
-          <input type="text" name="nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
+          <input type="text" name="nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre"/>
+          <?php
+          echo '<br>'.$valida->ImprimirError('nombre');
+          ?>
         </p>
 
         <p>
@@ -46,6 +56,9 @@ if (isset($_POST['submit'])) {
             <span class="g--obligatorio">*</span>
           </label>
           <input type="email" name="email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+          <?php
+          echo '<br>'.$valida->ImprimirError('email');
+          ?>
         </p>
         <p class="campo">
           <label for="pass">Contraseña
@@ -53,9 +66,12 @@ if (isset($_POST['submit'])) {
           </label>
           <input type="password" name="pass" id="pass" required="obligatorio" placeholder="Escribe tu contraseña">
           <span id="span">Mostrar</span>
+          <?php 
+         echo '<br>'.$valida->ImprimirError('pass');
+        ?> 
         </p>
         <?php
-      echo '<script type="text/javascript">
+        echo '<script type="text/javascript">
       let a = document.getElementById("span").addEventListener("click", e => {
           const passwordInput = document.getElementById("pass");
           if (e.target.classList.contains("show")) {
@@ -71,7 +87,7 @@ if (isset($_POST['submit'])) {
        
       </script>';
 
-      ?>
+        ?>
         <button type="submit" name='submit' class="enviar g--largo" id="enviar">
           Enviar
         </button>

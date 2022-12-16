@@ -14,6 +14,7 @@ class Login
 
     private static function ExisteUsuario(string $usuario,string $contrasena=null)
     {
+       // ControllerUsuario::obtenerUno($usuario,$contrasena)
         $ru = new RepoUsuario();
         $user = $ru->getUser($usuario,$contrasena);
        if($user->getLogin() == $usuario){

@@ -66,6 +66,12 @@ footer {
   justify-content: center;
 }
 
+.error_mensaje {
+  color: red;
+  padding-bottom: 30px;
+  font-weight: bolder;
+}
+
 .c-menu {
   background-color: orange;
   display: flex;
@@ -156,7 +162,10 @@ input {
   border-color: orange;
   margin-top: 10px;
   padding-left: 10px;
-  margin-bottom: 20px;
+}
+
+label {
+  margin-top: 25px;
 }
 
 textarea {
