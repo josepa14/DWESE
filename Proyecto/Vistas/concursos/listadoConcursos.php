@@ -6,7 +6,7 @@ $concurso = new RepoConcurso();
 
 
 #Paginacion
-$concursosPorPagina = 1;
+$concursosPorPagina = 2;
 $pagina = 1;
 if (isset($_GET["pagina"])) {
     $pagina = $_GET["pagina"];

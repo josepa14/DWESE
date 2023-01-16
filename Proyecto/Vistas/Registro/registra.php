@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
 
 
       <form action='' method='post' novalidate>
-
+<p class="error_mensaje">no se ha podido registrar</p>
         <p>
           <label for="login">usuario
             <span class="g--obligatorio">*</span>

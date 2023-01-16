@@ -1,0 +1,13 @@
+.canvas{
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+.canvas1{
+    order: 1;
+    width: 45%;
+}
+.canvas2{
+   order: 2;
+    width: 45%;
+}

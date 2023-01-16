@@ -22,7 +22,7 @@ window.addEventListener("load", async function () {
         })
     //para el desplegable
     $(document).ready(function () {
-        var estado = false;
+        let estado = false;
 
         $('#c-btn-toggle').on('click', function () {
             $('.c-seccionToggle').slideToggle();
@@ -40,7 +40,7 @@ window.addEventListener("load", async function () {
         });
     });
     $(document).ready(function () {
-        var estado = false;
+        let estado = false;
 
         $('#c-btn-toggle2').on('click', function () {
             $('.c-seccionToggle').slideToggle();

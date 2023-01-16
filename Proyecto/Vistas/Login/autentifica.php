@@ -29,7 +29,7 @@
                 <?php  echo '<br>'.$valida->ImprimirError('usuario'); ?>
             </div>
             <div class='form-group'>
-            <label for="contrasena">usuario</label>
+            <label for="contrasena">Pass</label>
                 <input type='password' class='form-control' name='contrasena' placeholder='Contraseña'
                     required='required'>
                 <?php  echo '<br>'.$valida->ImprimirError('contrasena'); ?>
