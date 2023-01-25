@@ -1,0 +1,156 @@
+html{
+	background-color: #888888;
+	font-family:Verdana;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+body{
+	background-color: #ffffff;
+	width:730px;
+	margin:auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	padding-top: 0px;
+	border: 1px solid #444444;
+	
+}
+
+a, a:active, a:visited{
+	color:#999999;
+	text-decoration:none;
+	padding-left:10px;
+	background:url(index_files/m09.gif) no-repeat center left;
+}
+a:hover{
+	color:#555555;
+}
+
+
+#cabecera{
+	float:left;
+	background:url(index_files/cabecera.png);
+	width:560px;
+	height:102px;
+}
+#cabecera h1{
+	display:none;
+}
+#cabecera2{
+	background:url(index_files/cabecera2.png);
+	width:735px;
+	height:36px;
+	clear:both;
+}
+#lateral{
+	background:url(index_files/lateral.png);
+	width:206px;
+	height:460px;
+}
+#pie{
+	background:url(index_files/pie.png);
+	width:731px;
+	height:109px;
+	clear:both;
+}
+
+#carrito{
+	width:160px;
+	height:40px;
+	margin-top:30px;
+	float:left;
+	background:url(index_files/m04.gif) no-repeat;
+	text-align:center;
+}
+
+#carrito .superior{
+	color:#999999;
+	font-size:10px;
+	margin:0px;
+}
+#carrito .inferior{
+	color:#5555ff;
+}
+
+.cuerpo{
+	width:515px;
+	float:right;
+	
+	clear:right;
+}
+.titulo_zona{
+	width:515px;
+	float:right;
+	height:30px;
+	border-bottom:3px solid #c9d8da;
+	text-align:right;
+	color:#999999;
+	margin-top:10px;
+	font-size:15px;
+}
+
+.producto{
+	width:163px;
+	height:110px;
+	
+	float:left;
+	margin:3px;
+	
+}
+
+.producto_detalle{
+	width:100%;
+	margin:3px;
+	margin-bottom:20px;
+	clear:both;
+}
+
+.producto h3,.producto_detalle h3{
+	margin-top:0px;
+	color: #889c48;
+	font-size:15px;
+}
+
+.producto .info, .foto{
+	width:79px;
+	float:left;
+}
+.producto_detalle .info{
+	width:80%;
+	float:left;
+}
+.producto_detalle .foto{
+	width:20%;
+	float:left;
+}
+.foto img{
+	width:79px;
+}
+
+.titulo_precio{
+	color:#999999;
+}
+
+
+.precio{
+	color:#5555ff;
+	font-size:12px;
+	margin-top:5px;
+	margin-bottom:10px;
+}
+
+.detalles img, .comprar  img{
+	border:none;
+}
+
+.resumen{
+	float:left;
+	margin-right:10px;
+}
+.enlaces{
+	clear:both;
+}
+.volver{
+	clear:both;
+}

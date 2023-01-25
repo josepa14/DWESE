@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/js.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="formLocalidades">
+        <label for="provincias">Provincias</label>
+        <select name="provincias" id="provincias">
+        <option>Seleccione una provincia</option></select>
+        <label for="municipios">municipios</label>
+        <select name="municipios" id="municipios"></select>
+        <button id="btnAnadir">Añadir</button>
+
+    </form>
+    <div id="annadidos"></div>
+    <canvas id="grafTemperaturas" class="canvas1"></canvas>
+</body>
+</html>
